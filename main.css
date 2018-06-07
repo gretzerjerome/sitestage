@@ -26,6 +26,8 @@ h3 {
 
 }
 
+
+
 .votre_bouton3 {
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
@@ -112,3 +114,7 @@ label {
     font-weight: 900;
     font-size: 3.5em;
   }
+
+  input[type="submit"]{
+    cursor:pointer;
+   }

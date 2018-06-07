@@ -1,3 +1,38 @@
+<?php
+if(isset($_POST['mailform']))
+{
+	if(!empty($_POST['nom']) AND !empty($_POST['mail']) AND !empty($_POST['message']))
+	{
+		$header="MIME-Version: 1.0\r\n";
+		$header.='From:"GretzerJerome"<gretzerjerome@gmail.com>'."\n";
+		$header.='Content-Type:text/html; charset="uft-8"'."\n";
+		$header.='Content-Transfer-Encoding: 8bit';
+
+		$message='
+		<html>
+			<body>
+				<div align="center">
+					<br />
+					<u>Nom de l\'expéditeur :</u>'.$_POST['nom'].'<br />
+					<u>Mail de l\'expéditeur :</u>'.$_POST['mail'].'<br />
+					<br />
+					'.nl2br($_POST['message']).'
+					<br />
+				</div>
+			</body>
+		</html>
+		';
+
+		mail("gretzerjerome@gmail.com", "CONTACT - Blabla", $message, $header);
+		$msg="Votre message a bien été envoyé !";
+	}
+	else
+	{
+		$msg="Tous les champs doivent être complétés !";
+	}
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +45,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
-    <form id="contact" method="post" action="envoi.php">
 </head>
 <body>
     <section id="screen1" class="screen1 container">
@@ -114,10 +148,13 @@
 
     <section id="screen3" class="screen3 container">
 
+            <p style="height:30px; font-size:18px;"></p>
+
+
         <h2><u><center>Mes compétences</center></u></h2>
 
         <u><center>j'utilise les langages suivants :</center></u>
-        </br>
+        <p style="height:70px; font-size:18px;"></p>
         <table>
 
               <tr>
@@ -130,18 +167,12 @@
               <td>
                 <img src="asset/phplogo.png" alt="php" width="150" height="200">
               </td>
-              <tr>
               <td>
                   <img src="asset/javascriptlogo.png" alt="php" width="200" height="200">
-              </td>
-              <td>
-                  <img src="asset/wordpresslogo1.png" alt="php" width="230" height="200">
-              </td>
-              <td>
-                  <img src="asset/react-logo.png" alt="php" width="200" height="200">
 
               </td>
         </table>
+        <p style="height:40px; font-size:18px;"></p>
 
 
       <button class="votre_bouton3">
@@ -170,27 +201,22 @@
 
     <section id="screen5" class="screen 5 container">
 
-          <p style="height:200px; font-size:18px;"></p>
+          <p style="height:130px; font-size:18px;"></p>
 
+          <h3><u>Contact</u></h3>
+          <form method="POST" action="">
+            <input type="text" name="nom" placeholder="Votre nom" value="<?php if(isset($_POST['nom'])) { echo $_POST['nom']; } ?>" /><br /><br />
+            <input type="email" name="mail" placeholder="Votre email" value="<?php if(isset($_POST['mail'])) { echo $_POST['mail']; } ?>" /><br /><br />
+            <textarea name="message" placeholder="Votre message" rows="25" cols="110"><?php if(isset($_POST['message'])) { echo $_POST['message']; } ?></textarea><br /><br />
+            <input type="submit" value="Envoyer !" name="mailform"/>
+          </form>
+          <?php
+          if(isset($msg))
+          {
+            echo $msg;
+          }
+          ?>
 
-          <section id="formulaire2" class="formulaire2">
-
-            <h2>Contact</h2>  
-
-            <form id='contact' method="post" action="<?php echo $_SERVER['PHP_SELF'];?>" enctype="multipart/form-data">  
-              <p id='obj'><label for='objet'>Objet de votre message :<br>  
-              <input type='text' name='objet' id='objet' tabindex='10' size='30'></label></p>   
-            
-              <p id="adr"><label for="mail">Votre Adresse E-mail<br>  
-              <input name="votremail" tabindex="20" size="30" type="text" id="mail" value="<?php echo $votremail; ?>"></label></p>  
-                
-              <p id="msg"><label for="message">Votre message<br>  
-              <textarea tabindex="30" rows="20" cols="120" name="message" id="message"><?php echo $message; ?></textarea>  
-              </label></p>  
-            <?php echo $bas_formulaire;?>  
-            </form>
-
-          </section>
         
     </section>
 

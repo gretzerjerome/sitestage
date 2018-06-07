@@ -1,0 +1,114 @@
+body {
+    background-image: url(asset/hackerfound.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-image: cover;
+    color: white;
+    font-family: 'Anonymous Pro', monospace;
+
+}
+
+
+h1 {
+    font-size: 150px;
+    text-align : center;
+
+}
+
+h2 {
+    font-size: 100px;
+    text-align : center;
+}
+
+h3 {
+    font-size: 70px;
+    text-align:center; 
+
+}
+
+.votre_bouton3 {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0px;
+    font-family: Courier New;
+    color: #000000;
+    font-size: 41px;
+    background: #edf0f2;
+    padding: 19px 20px 11px 20px;
+    border: solid #010a0f 8px;
+    text-decoration: none;
+    display: block;
+    margin : auto;  
+    margin-top: 120px;
+}
+  
+  .votre_bouton3:hover {
+    text-decoration: none;
+  }
+
+div#peekaboo{
+    position:fixed;
+    bottom:0px;
+    right:-352px;
+    background: rgb(255, 255, 255);
+    padding:25px;
+    width:100px;
+    height:500px;
+    font-size:48px;
+    
+    }
+
+div#circle1 {
+    margin-bottom:200px;
+}
+
+.presentationsection2 {
+    margin-top: 200px;
+    font-size : 50px;
+}
+
+presentationsection3 {
+    margin-left: 100px;
+}
+
+.screen2 {
+    margin: 150px;
+}
+
+.screen3 {
+    margin: 150px;
+}
+
+.formulaire {
+    font-size : 100px;
+    margin-left: 7%;
+}
+
+.black {
+    text-align : center;
+}
+
+p {
+    display: block;
+    font-size: 30px;
+}
+
+citationdrole {
+    font-size: 5px;
+}
+
+label {
+    font-size: 50px;
+}
+
+  table {
+    width: 70%;
+    height: 70%;
+    margin-left: 20%;
+    margin-right:40%;
+  }
+
+.ml3 {
+    font-weight: 900;
+    font-size: 3.5em;
+  }

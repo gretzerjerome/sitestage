@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CV from alstom</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="app.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
+    <form id="contact" method="post" action="envoi.php">
+</head>
+<body>
+    <section id="screen1" class="screen1 container">
+        <h2>
+        <div class="content">
+          <div class="random">
+               <span class="nbr ltr">0</span>
+               <span class="nbr ltr">0</span>
+               <span class="nbr ltr">0</span>
+               <span class="nbr ltr">0</span>
+               <span class="nbr ltr">0</span>
+               <span class="nbr ltr">0</span>
+               <span class="nbr ltr">0</span>
+          </div>
+     </div>
+
+     <script type="text/javascript">
+
+     $(document).ready(function() {
+
+     var $randomnbr = $('.nbr');
+     var $timer = 30;
+     var $it;
+     var $data = 0;
+     var index;
+     var change;
+     var letters = ["B", "o", "n", "j", "o", "u", "r"];
+
+     $randomnbr.each(function() {
+
+     change = Math.round(Math.random()*100);
+     $(this).attr('data-change', change);
+
+     });
+
+     function random() {
+          return Math.round(Math.random()*9);
+     };
+
+     function select() {
+          return Math.round(Math.random()*$randomnbr.length+1);
+     };
+
+     function value() {
+          $('.nbr:nth-child('+select()+')').html(''+random()+'');
+          $('.nbr:nth-child('+select()+')').attr('data-number', $data);
+          $data++;
+
+          $randomnbr.each(function() {
+               if(parseInt($(this).attr('data-number')) > parseInt($(this).attr('data-change'))) {
+                    index = $('.ltr').index(this);
+                    $(this).html(letters[index]);
+                    $(this).removeClass('nbr');
+               }
+          });
+     };
+
+     $it = setInterval(value, $timer);
+
+     });
+
+     </script>
+          </h2>
+          <h3>
+          </br>
+          Mon nom est Jérôme  
+          </br>
+          Je suis développeur Web Chez Becode
+          </h3>
+          <button class="votre_bouton3">
+          <a href="#screen2" class="button" scrollamount="1" scrolldelay="50">Je suis à la recherche d'un stage</a>
+         </button>
+    </section>
+      <p style="height:250px; font-size:18px;"></p>
+
+		<section id="screen2" class="screen2 container">
+        <div class="espace"><br></div>
+
+
+        <div id="presentationsection2" class="presentationsection2"><u>Je me présente à vous pour un stage pour les raisons suivantes :</u></div>
+        
+        <p>- J'aime vos projets</p>
+          
+        <p>- Je partage les mêmes passions que vous</p>
+          
+        <p>- j'ai besoin de prendre de l'expérience </p>
+        
+        <p>- je veux pouvoir utiliser vos technologies et celles que j'ai appris 
+          de manière professionnelle</p>
+          
+        <div id="citationdrole" class="citationdrole"><i>(comme tout développeur, selon scott adams, je pense ne pas encore avoir fait assez de choses mais 
+        je vais m'arrêter là)</i></div>
+
+
+        <button class="votre_bouton3">
+            <a href="#screen3" class="button">Mes compétences</a>
+            </button>
+
+    </section>
+        <p style="height:250px; font-size:18px;"></p>
+
+    <section id="screen3" class="screen3 container">
+
+        <h2><u><center>Mes compétences</center></u></h2>
+
+        <u><center>j'utilise les langages suivants :</center></u>
+        </br>
+        <table>
+
+              <tr>
+              <td>
+                <img src="asset/html.png" alt="html" width="200" height="200">
+              </td>
+              <td>
+                <img src="asset/csslogo.png" alt="css" width="150" height="200">
+              </td>
+              <td>
+                <img src="asset/phplogo.png" alt="php" width="150" height="200">
+              </td>
+              <tr>
+              <td>
+                  <img src="asset/javascriptlogo.png" alt="php" width="200" height="200">
+              </td>
+              <td>
+                  <img src="asset/wordpresslogo1.png" alt="php" width="230" height="200">
+              </td>
+              <td>
+                  <img src="asset/react-logo.png" alt="php" width="200" height="200">
+
+              </td>
+        </table>
+
+
+      <button class="votre_bouton3">
+          <a href="#screen4" class="button">Pourquoi me choisir ?</a>
+          </button>
+
+
+    <section id="screen4" class="screen4 container">
+          <div class="espace2"><br></div>
+
+         <div id="presentationsection2" class="presentationsection2"><u>Pourquoi me choisir comme stagiaire ?</u></div>
+    
+          <p>- je suis motivé et fiable</p>
+
+          <p>- Je veux apprendre de nouvelles choses</p>
+
+          <p>Ne viens de finir ma formation et j'ai hâte d'utiliser mes nouvelles connaissances dans un milieu professionnelle</p>
+
+          <div id="citationdrole" class="citationdrole"><i>(Par contre, je ne sais pas changer une ampoule... c'est un problème Hardware)</i></div>
+
+          <button class="votre_bouton3">
+            <a href="#screen5" class="button">Contactez moi</a>
+          </button>
+
+    </section>
+
+    <section id="screen5" class="screen 5 container">
+
+          <p style="height:200px; font-size:18px;"></p>
+
+
+          <section id="formulaire2" class="formulaire2">
+
+            <h2>Contact</h2>  
+
+            <form id='contact' method="post" action="<?php echo $_SERVER['PHP_SELF'];?>" enctype="multipart/form-data">  
+              <p id='obj'><label for='objet'>Objet de votre message :<br>  
+              <input type='text' name='objet' id='objet' tabindex='10' size='30'></label></p>   
+            
+              <p id="adr"><label for="mail">Votre Adresse E-mail<br>  
+              <input name="votremail" tabindex="20" size="30" type="text" id="mail" value="<?php echo $votremail; ?>"></label></p>  
+                
+              <p id="msg"><label for="message">Votre message<br>  
+              <textarea tabindex="30" rows="20" cols="120" name="message" id="message"><?php echo $message; ?></textarea>  
+              </label></p>  
+            <?php echo $bas_formulaire;?>  
+            </form>
+
+          </section>
+        
+    </section>
+
+    <div id="peekaboo">
+
+        <a href="https://www.facebook.com/minato.shikinami"><img src="asset/facebook-icon-100x100.jpg" alt="facebook" style="border:none"></a>
+        <a href="https://github.com/gretzerjerome"><img src="asset/github-filled.png" alt="facebook" style="border:none"></a>
+        <a href="https://www.linkedin.com/in/j%C3%A9r%C3%B4me-gretzer-011b60157/"><img src="asset/linkedin-icon-25.png" alt="facebook" style="border:none"></a>
+        <a href="https://www.gretzerjerome.serol.be/"><img src="asset/index.jpeg" alt="facebook" style="border:none"></a>
+
+
+      </div>
+
+    
+</body>
+</html>
